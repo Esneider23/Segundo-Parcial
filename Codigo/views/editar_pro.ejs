@@ -1,0 +1,105 @@
+.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapston Proyect System</title>
+    <link rel="icon" href="/imagenes/Log.jpeg">
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body id="body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="/index">
+            <img src='/imagenes/utb-logotipo-blanco.png' alt="" width="120" height="60" class="d-inline-block align-text-top-center" ></img>
+            </a>   
+          </ul>  
+        </div>
+        </div>
+    </nav>
+    <main>
+        <% if (proyecto) { %>
+            <div class="container-fluid px-1 py-5 mx-auto">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                        <br>
+                        <div class="card">
+                            <h5 class="text-center mb-4">Actualizar Proyectos</h5>
+                            <form  action="/editar/pro" method="post">
+                                <input id="idproyecto" name="idproyecto" value="<%= proyecto.idproyecto %>" hidden>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Codigo<span class="text-danger"> *</span></label> <input type="text" id="Codigo" name="Codigo" placeholder="<%= proyecto.idproyecto %>" value="<%= proyecto.idproyecto %>" onblur="validate(1)" readonly> </div>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> <input type="text" id="nombreproyecto" name="nombreproyecto" placeholder="<%= proyecto.nombre %>" value="<%= proyecto.nombre %>" onblur="validate(2)" readonly> </div>
+                                </div>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Descripción del proyectos<span class="text-danger"> *</span></label> <input type="text" id="descripcion" name="descripcion" placeholder="<%= proyecto.descripcion %>" value="<%= proyecto.descripcion %>" onblur="validate(3)" readonly> </div>
+                                </div>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Presupuesto<span class="text-danger"> *</span></label> <input type="number" step="1" min="0" max="" id="presupuesto" name="presupuesto" placeholder="<%= proyecto.presupuesto %>" value="<%= proyecto.presupuesto %>" onblur="validate(4)" readonly> </div>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Estado<span class="text-danger"> *</span></label>
+                                        <div class="sidebar-box">
+                                            <select class="styled-select" class="form-control" id="estado" name="estado" style="height: 45px; position: absolute; top: 45px; left: 20%; transform: translate(-50%,-50%); height: 45px; height: 45%;">
+                                                <% estados.forEach((estados)=>{%>
+                                                    <tr>                                        
+                                                      <option <%= estados.idestado%> value="<%= estados.idestado%>"><th><%= estados.nomb%></th></option>
+                                                    </tr>
+                                                  <%});%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Docente<span class="text-danger"> *</span></label>
+                                        <div class="sidebar-box">
+                                            <select class="styled-select" class="form-control" id="docente" name="docente" style="height: 45px;" >
+                                                <% usuarios.forEach((usuarios)=>{%>
+                                                    <tr>                                     
+                                                      <option <%= usuarios.idusuario %> value="<%= usuarios.idusuario%>"><th><%= usuarios.nombrepersona%></th></option>
+                                                    </tr>
+                                                  <%});%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Estudiante<span class="text-danger"> *</span></label>
+                                        <div class="sidebar-box">
+                                            <select class="styled-select" class="form-control" id="estudiante" name="estudiante" style="height: 45px; position: absolute; top: 45px; left: 20%; transform: translate(-50%,-50%); height: 45px; height: 45%;">
+                                                <% estudiantes.forEach((estudiantes)=>{%>
+                                                    <tr>                                        
+                                                      <option <%= estudiantes.idusuario%> value="<%= estudiantes.idusuario%>"><th><%= estudiantes.nombrepersona%></th></option>
+                                                    </tr>
+                                                  <%});%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+
+                                <div class="row justify-content-end">
+                                    <div class="form-group col-sm-6"> 
+                                        <button type="submit" class="btn btn-outline-primary" aling="center">Actualizar</button>
+                                        <a href="/profesor" class="btn btn-outline-danger" aling="center">Cancelar</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <%}%>
+  
+    </main>
+    <script src="resources/css/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapston Proyect System</title>
+    <link rel="icon" href="/imagenes/Log.jpeg">
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <link rel="stylesheet" href="resources/css/tabla.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars"  href="/index" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+            <img src="./imagenes/utb-logotipo-blanco.png" width="75"/>
+            <h5>Gapston Proyect System</h5>
+        </div>
+
+        <div class="options__menu">	
+
+            <a href="/index" class="selected">
+                <div class="option">    
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="/act_proyecto">
+                <div class="option">
+                    <i class="far fa-file" title="Portafolio"></i>
+                    <h4>Actualizar proyectos</h4>
+                </div>
+            </a>
+            <a href="/donar">
+                <div class="option">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h4>Donaciones</h4>
+                </div>
+            </a>
+            <a href="/usuarios">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Usuarios"></i>
+                    <h4>Usuarios</h4>
+                </div>
+            </a>
+            
+            <a href="logout">
+                <div class="option">
+                    <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesion" style="background-image: white; "></i>
+                    <h4>Cerrar sesion</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <main>
+        <h1 align="center">Actualizar Proyectos</h1>
+        <br>
+        <p align="justify">
+            En esta seccion podras actualzar todos los proyectos que se encuentran registrado en la aplicacion
+            para poder realizar esta actualización contaremos con dos subsistemas los cuales se basan en la
+            asignación de los docentes, y en la modificación de proyectos que ya cuenten con la asignación de los
+            docentes que se encargan de la gestion de cada proyecto. 
+        </p><br>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a  class="boton_personalizado" href="/asignar_docente" >Asignar docentes</a>
+            <a  class="boton_personalizado" href="/editar_registros">Modificar proyectos</a>
+        </div>
+
+        
+            
+                <table summary="Lista de proyectos">
+                    <thead class="thead-dark">
+                        <tr class="bg-primary text-white">
+                            <th scope="col" class="fst-italic">Id</th>
+                            <th scope="col" class="fst-italic">Nombre</th>
+                            <th scope="col" class="fst-italic">Descripción</th>
+                            <th scope="col" class="fst-italic">Estado del proyecto</th>
+                            <th scope="col" class="fst-italic">Presupuesto</th>
+                            <th scope="col" class="fst-italic">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% results.forEach((results)=>{%>
+                      <tr>    
+                          <td><%= results.idproyecto %></td>
+                          <td><%= results.nombre %></td>
+                          <td><%= results.descripcion %></td>
+                          <td><%=results.nomb%></td>
+                          <td><%= results.presupuesto%></td>
+                          <td>
+                              <a href="/editar/<%= results.idproyecto %>" class="btn btn-outline-info">Editar</a>
+                          </td>
+                      </tr>
+                  <%})%>
+                    </tbody>
+                </table>
+    </main>
+
+    <script src="resources/css/script.js"></script>
+</body>
+</html>
+

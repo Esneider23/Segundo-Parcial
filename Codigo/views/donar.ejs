@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapston Proyect System</title>
+    <link rel="icon" href="/imagenes/Log.jpeg">
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body id="body">
+    
+  <header>
+    <div class="icon__menu">
+        <i class="fas fa-bars" href="/index" id="btn_open"></i>
+    </div>
+</header>
+
+<div class="menu__side" id="menu_side">
+
+    <div class="name__page">
+        <img src="./imagenes/utb-logotipo-blanco.png" width="75"/>
+        <h5>Gapston Proyect System</h5>
+    </div>
+
+    <div class="options__menu">	
+
+        <a href="/index" >
+            <div class="option">    
+                <i class="fas fa-home" title="Inicio"></i>
+                <h4>Inicio</h4>
+            </div>
+        </a>
+        <a href="/act_proyecto">
+            <div class="option">
+                <i class="far fa-file" title="Portafolio"></i>
+                <h4>Actualizar proyectos</h4>
+            </div>
+        </a>
+        <a href="/donar" class="selected">
+            <div class="option">
+                <i class="fa-solid fa-landmark"></i>
+                <h4>Donaciones</h4>
+            </div>
+        </a>
+        <a href="/usuarios">
+            <div class="option">
+                <i class="far fa-id-badge" title="Usuarios"></i>
+                <h4>Usuarios</h4>
+            </div>
+        </a>
+
+        <a href="logout">
+            <div class="option">
+                <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesion" style="background-image: white; "></i>
+                <h4>Cerrar sesion</h4>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+    <main>
+        <h1>Donar</h1><br>
+        <div>
+          <br>
+          <div class="container mt-4">
+              <div class="card border-secondary">
+                  <div class="card-header"> Donacion</div>
+                  <div class="card-body">
+                      <form action="/donar" method="post">
+                          <div class="mb-3">
+                           <div class="form-group row">
+                               <label for="text" class="col-sm-2 col-form-label">Tipo de identificación</label>
+                               <div class="col-sm-10">
+                                   <select id="tipo_identificacion" name="tipo_identificacion" class="form-select" tabindex="1" style="width: 145px; height: 36px;">
+                                       <option value="seleccione" selected>Seleccione</option>
+                                       <option value="C.C">Cedula</option>
+                                       <option value="C.E">Cedula de Extranjeria</option>
+                                       <option value="Nit_empresa">Nit Empresa</option>
+                                   </select>
+                                 </div>
+                           </div>
+                           </div>
+   
+                           <div class="mb-3">
+                           <div class="form-group row">
+                               <label for="text" class="col-sm-2 col-form-label">Identificación</label>
+                               <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="identificacion" name="identificacion" tabindex="2" style="width: 145px;">
+                               </div>
+                           </div>
+                           </div>
+   
+                           <div class="mb-3">
+                             <div class="form-group row">
+                               <label for="text" class="col-sm-2 col-form-label">Nombre completo</label>
+                               <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="nombre" name="nombre" tabindex="2" style="width: 500px;">
+                               </div>
+                             </div>
+                             </div>
+                           
+                             <div class="mb-3">
+                               <div class="form-group row">
+                                 <label for="text" class="col-sm-2 col-form-label">Dirección</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="direccion" name="direccion" tabindex="3" style="width: 500px;">
+                                 </div>
+                               </div>
+                               </div>  
+                               
+                             <div class="mb-3">  
+                             <div class="form-group row">
+                               <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                 <div class="col-sm-10">
+                                   <input type="email" class="form-control" id="email" name="email" tabindex="4" style="width: 290px;">
+                               </div>
+                             </div>
+                             </div>
+   
+                             <div class="mb-3">  
+                               <div class="form-group row">
+                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Telefono</label>
+                                   <div class="col-sm-10">
+                                     <input type="number" class="form-control" id="telefono" name="telefono" tabindex="5" style="width: 290px;">
+                                 </div>
+                               </div>
+                               </div>
+   
+                           <div class="mb-3">
+                           <div class="form-group row">
+                               <label for="text" class="col-sm-2 col-form-label">Concepto</label>
+                               <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="concepto" name="concepto" tabindex="6" style="width: 600px; height: 150px;">
+                               </div>
+                             </div>
+                           </div>
+   
+                           <div class="mb-3">
+                             <div class="form-group row">
+                                 <label for="text" class="col-sm-2 col-form-label">Programa a apoyar</label>
+                                 <div class="col-sm-10">
+                                     <select v-model="donar" class="form-control" id="programa" name="programa" tabindex="7" style="width: 150px; height: 45px;">
+                                       <% results.forEach((results)=>{%>
+                                         <tr>                                        
+                                           <option <%= results.idproyecto%> value="<%= results.idproyecto%>"><th><%= results.nombre%></th></option>
+                                         </tr>
+                                       <%});%>
+                                     </select>
+                                   </div>
+                               </div>
+                             </div>
+   
+                           <div class="mb-3">
+                           <div class="form-group row">
+                               <label for="text" class="col-sm-2 col-form-label">Valor a donar</label>
+                               <div class="col-sm-10">
+                                 <div class="input-group mb-3">
+                                 <span class="input-group-text">$</span>
+                                 <!-- <input type="number" class="form-control" id="valor" name="valor" tabindex="8" placeholder="1" step="1" min="0" max=""/> -->
+                                 <input type="number" id="valor" name="valor" step="1" min="0" max="">
+                               </div>
+                             </div>
+                           </div>
+                           </div>
+                           <div class="mb-3">
+                           <div class="form-group row">
+                             <div class="col-sm-10">
+                               <button type="submit" class="btn btn-outline-primary" aling="center">Pagar</button>
+                               <a href="/donaciones" class="btn btn-outline-danger" aling="center">Cancelar</a>
+                             </div>
+                           </div>
+                         </div>
+                         </div>
+                      </form>
+   
+                  </div>
+              </div>
+          </div>
+      </div>
+   </div>
+    </main>
+    <script src="resources/css/script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <%if(typeof alert != "undefined"){%>
+        <script>
+            Swal.fire({
+                title:'<%= alertTitle %>',
+                text:'<%= alertMessage %>',
+                icon:'<%= alertIcon  %>',
+                showConfirmButton:'<%= ShowConfirmButton  %>',
+                timer:'<%= timer %>'
+            }).then(()=>{
+                window.location='/<%= ruta  %>'
+            })
+        </script>
+    <%}%>
+</body>
+</html>
+

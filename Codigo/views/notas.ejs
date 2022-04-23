@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapston Proyect System</title>
+    <link rel="icon" href="/imagenes/Log.jpeg">
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <link rel="stylesheet" href="resources/css/botones.css">
+    <link rel="stylesheet" href="resources/css/tabla.css">
+
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars"  href="/index" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+            <img src="./imagenes/utb-logotipo-blanco.png" width="75"/>
+            <h5>Gapston Proyect System</h5>
+        </div>
+
+        <div class="options__menu">	
+
+            <a href="/profesor" >
+                <div class="option">    
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+
+
+            <a href="/notas" class="selected">
+                <div class="option" >
+                    <i class="far fa-file" title="Reporte"></i>
+                    <h4>Reporte</h4>
+                </div>
+            </a>
+            
+            <a href="logout">
+                <div class="option">
+                    <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesion" style="background-image: white; "></i>
+                    <h4>Cerrar sesion</h4>
+                </div>
+            </a>
+            
+        </div>
+
+    </div>
+
+    <main>
+
+
+        <form action="/psend-email" method="post">
+            <div class = "login-form">
+                <h1>Subir reporte</h1>
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                    <input type="email" name="email" id="email" placeholder="Email"  required>
+                    <textarea name="message" rows="6" placeholder="Descripción"></textarea>
+                    <input type="submit" class="btn-enviar" value="Enviar">
+            </div>
+        </form>
+
+        
+        
+    </main>
+    
+    <script src="resources/css/script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <%if(typeof alert != "undefined"){%>
+        <script>
+            Swal.fire({
+                title:'<%= alertTitle %>',
+                text:'<%= alertMessage %>',
+                icon:'<%= alertIcon  %>',
+                showConfirmButton:'<%= ShowConfirmButton  %>',
+                timer:'<%= timer %>'
+            }).then(()=>{
+                window.location='<%= ruta  %>'
+            })
+        </script>
+    <%}%>
+</body>
+</html>
+

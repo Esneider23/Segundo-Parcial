@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapston Proyect System</title>
+    <link rel="icon" href="/imagenes/Log.jpeg">
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <link rel="stylesheet" href="resources/css/botones.css">
+    <link rel="stylesheet" href="resources/css/tabla.css">
+
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars"  href="/index" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+            <img src="./imagenes/utb-logotipo-blanco.png" width="75"/>
+            <h5>Gapston Proyect System</h5>
+        </div>
+
+        <div class="options__menu">	
+
+            <a href="/estudiantes" >
+                <div class="option">    
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+
+            <a href="/asignados" class="selected">
+                <div class="option">
+                    <i class="fa-solid fa-file-lines" title="Proyecto asignado"></i>
+                    <h4>Proyectos asignados</h4>
+                </div>
+            </a>
+
+            <a href="/reporte" >
+                <div class="option" >
+                    <i class="far fa-file" title="Reporte"></i>
+                    <h4>Reporte</h4>
+                </div>
+            </a>
+            
+            <a href="logout">
+                <div class="option">
+                    <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesion" style="background-image: white; "></i>
+                    <h4>Cerrar sesion</h4>
+                </div>
+            </a>
+            
+        </div>
+
+    </div>
+
+    <main>
+        <h1 align="center">Proyectos asignados!</h1>
+        <br>
+        <p>
+            En esta seccion encontraras todos los proyectos que desarrollaras, estos proyectos fueron asignados por los diferentes docentes del area.
+            los proyectos mostrados corresponde a un general, para obtener solo los tuyos filtra la tabla por tu codigo 
+        </p>
+        <form >
+            
+            <table summary="Tabla de usuarios">
+                <caption>Tabla de proyectos asignados</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre Proyecto</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Codigo Estudiante</th>
+                    <th scope="col">Nombre Estudiante</th>
+                    <th scope="col">Nombre Docente</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach((results)=>{%>   
+                        <td><%= results.idproyecto%></td>
+                        <td><%= results.nombre %></td>
+                        <td><%= results.name%></td>
+                        <td><%= results.idusuario%></td>
+                        <td><%= results.nombrepersona%></td>
+                        <td>
+                        <% profesor.forEach((profesor)=>{%>  
+                            <% if (results.profesor == profesor.idusuario ) { %> 
+                              <%=profesor.nombrepersona%>
+                              <%}%> 
+                        <%})%>  
+                        </td>         
+                    </tr>
+                    <%})%>
+                </tbody>
+              </table>
+
+        </form>
+        
+    </main>
+
+    <script src="resources/css/script.js"></script>
+</body>
+</html>
+

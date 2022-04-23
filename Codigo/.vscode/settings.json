@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/84b717e0-e781-4442-b4f5-cde16d2935d7/resourceGroups/GaProSys/providers/Microsoft.Web/sites/GaProSys",
+    "appService.deploySubpath": "."
+}
