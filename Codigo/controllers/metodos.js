@@ -94,7 +94,7 @@ exports.autenticar = (req, res)=>
     {
         conexion.query('SELECT * FROM usuarios WHERE user = ?', [user], async (error, results)=>
         {
-            if(results.length > 0)
+            if(results.length>0)
             {
                 results.forEach(element=>{
                     if(element.password == pass)

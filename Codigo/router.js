@@ -113,14 +113,14 @@ router.get('/asignar_docente',(req,res)=>{
 
 //Ruta para editar los registros generales
 router.get('/editar_registros',(req,res)=>{
-  conexion.query('select pro.idproyecto, pro.nombre, pro.descripcion, pro.presupuesto, pro.estudiante, es.nomb, cl.name , user.nombrepersona from proyecto pro inner join cliente cl on pro.cliente = cl.idcliente inner join estado es on pro.estado = es.idestado inner join usuarios user on (pro.profesor = user.idusuario) order by idproyecto asc',(error,results)=>{
+  conexion.query('select pro.idproyecto, pro.nombre, pro.descripcion, pro.presupuesto, pro.estudiante, user.nombrepersona, es.nomb, cl.name  from proyecto pro inner join cliente cl on pro.cliente = cl.idcliente inner join estado es on pro.estado = es.idestado inner join usuarios user on (pro.profesor = user.idusuario) order by idproyecto asc',(error,results)=>{
     if(error)
     {
       throw error;
     }
     else
     {
-      conexion.query('select  user.idusuario ,user.nombrepersona  from usuarios user inner join proyecto pro on user.idusuario = pro.estudiante', (error,estudiante)=>{
+      conexion.query('select  user.idusuario, user.nombrepersona   from usuarios user inner join proyecto pro on user.idusuario = pro.estudiante', (error,estudiante)=>{
         if (error)
         {
           throw error;
