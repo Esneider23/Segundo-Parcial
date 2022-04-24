@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cliente` (
   `idcliente` varchar(45) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES ('124','Andres',1),('45','pinto',1),('Ali23','Aguas Cartagena',2);
+INSERT INTO `cliente` VALUES ('12','kasr',1),('124','Andres',1),('45','pinto',1),('Ali23','Aguas Cartagena',2);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `estado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `estado` (
   `idestado` int NOT NULL AUTO_INCREMENT,
   `nomb` varchar(45) NOT NULL,
@@ -73,7 +73,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `posicion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `posicion` (
   `idposicion` int NOT NULL,
   `nombre` varchar(45) NOT NULL,
@@ -97,7 +97,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `proyecto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `proyecto` (
   `idproyecto` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -124,7 +124,7 @@ CREATE TABLE `proyecto` (
 
 LOCK TABLES `proyecto` WRITE;
 /*!40000 ALTER TABLE `proyecto` DISABLE KEYS */;
-INSERT INTO `proyecto` VALUES (1,'Aguas','un sistema capaz de determinar la pureza del agua de Cartagena',0,1,'Ali23',3,2),(2,'Transporte','Realizar una app que permita reservar carpas en las playas de cartagena',2,1,'124',3,5),(3,'Playas','Realizar una app que permita notificar a la marina incidentes en el mar',60000,2,'124',4,NULL),(4,'kol','hlkdfghjkl',10992,2,'45',4,NULL);
+INSERT INTO `proyecto` VALUES (1,'Aguas','un sistema capaz de determinar la pureza del agua de Cartagena',7,1,'Ali23',3,2),(2,'Transporte','Realizar una app que permita reservar carpas en las playas de cartagena',4,1,'124',3,2),(3,'Playas','Realizar una app que permita notificar a la marina incidentes en el mar',60000,2,'124',4,NULL),(4,'kol','hlkdfghjkl',10992,2,'45',4,NULL);
 /*!40000 ALTER TABLE `proyecto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tipo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tipo` (
   `idtipo` int NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
@@ -158,7 +158,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8_general_ci */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `idusuario` int NOT NULL AUTO_INCREMENT,
   `nombrepersona` varchar(130) DEFAULT NULL,
@@ -179,7 +179,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Esneider Guzman','H','Esneider','Esneider23','esneydergp69@gmail.com',1),(2,'Kevin','H','Kevin','Kevin23','kevin23@gmail.com',3),(3,'Edwin Alexander','H','Edwin','Edwin23','epuerta@utb.edu.co',2),(4,'Gloria Bautista','M','Gloria','Gloria23','gbautista@utb.edu.co',2),(5,'Karoll Pinto','M','Karoll','Karoll23','kpinto@utb.edu.co',3);
+INSERT INTO `usuarios` VALUES (1,'Esneider Guzman','H','Esneider','Esneider23','esneydergp69@gmail.com',1),(2,'Kevin','H','Kevin','Kevin23','kevin23@gmail.com',3),(3,'Edwin Alexander','H','Edwin','Edwin23','epuerta@utb.edu.co',3),(4,'Gloria Bautista','M','Gloria','Gloria23','gbautista@utb.edu.co',2),(5,'Karoll Pinto','M','Karoll','Karoll23','kpinto@utb.edu.co',3);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -192,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-23 23:43:44
+-- Dump completed on 2022-04-24  8:12:45
